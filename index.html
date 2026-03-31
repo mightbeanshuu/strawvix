@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Strawvix helps clinics, real estate, logistics operators and other service businesses turn clicks into booked customers through done-for-you growth and automation.">
+    <meta name="description"
+        content="Strawvix helps clinics, real estate, logistics operators and other service businesses turn clicks into booked customers through done-for-you growth and automation.">
     <title>Strawvix — Growth & Automation for Local Service Businesses</title>
-    
+
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -15,10 +17,48 @@
                 extend: {
                     colors: {
                         gray: {
-                            850: '#1f2937',
-                            900: '#111827',
-                            950: '#030712',
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            200: '#e2e8f0',
+                            300: '#cbd5e1',
+                            400: '#94a3b8',
+                            500: '#64748b',
+                            600: '#475569',
+                            700: '#334155',
+                            800: '#1e293b',
+                            900: '#0f172a',
+                            950: '#020617',
+                        },
+                        black: '#0f172a', /* slate-900 */
+                        slate: {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            200: '#e2e8f0',
+                            300: '#cbd5e1',
+                            400: '#94a3b8',
+                            500: '#64748b',
+                            600: '#475569',
+                            700: '#334155',
+                            800: '#1e293b',
+                            900: '#0f172a',
+                            950: '#020617',
+                        },
+                        brand: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            300: '#93c5fd',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                            950: '#172554',
                         }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
                     }
                 }
             }
@@ -53,34 +93,52 @@
 
         document.addEventListener('DOMContentLoaded', syncThemeButtons)
     </script>
-    
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
     <style>
         * {
             scroll-behavior: smooth;
         }
-        
+
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            color: #1a1a1a;
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: #334155;
+            /* slate-700 */
             line-height: 1.6;
+            background-color: #f8fafc;
+            /* slate-50 */
         }
-        
-        h1, h2, h3, h4, h5, h6 {
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
             font-weight: 700;
-            letter-spacing: -0.02em;
+            letter-spacing: -0.025em;
+            color: #0f172a;
+            /* slate-900 */
         }
-        
-        /* Accenture-style navigation */
+
+        /* Modern Navigation */
         .nav-link {
             position: relative;
             transition: color 0.2s ease;
+            color: #475569;
+            /* slate-600 */
         }
-        
+
+        .nav-link:hover {
+            color: #2563eb;
+            /* brand-600 */
+        }
+
         .nav-link:hover::after {
             content: '';
             position: absolute;
@@ -88,141 +146,236 @@
             left: 0;
             right: 0;
             height: 2px;
-            background: #000;
+            background: #2563eb;
+            /* brand-600 */
+            border-radius: 2px;
         }
-        
-        /* Button styles - more corporate, less rounded */
+
+        /* Modern Gradients & Buttons */
         .btn-primary {
-            background: #000;
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
             color: #fff;
-            padding: 14px 32px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: 2px solid #000;
+            padding: 12px 32px;
+            font-weight: 500;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid transparent;
+            border-radius: 9999px;
+            /* Pill shape */
+            box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.1), 0 2px 4px -1px rgba(37, 99, 235, 0.06);
         }
-        
+
         .btn-primary:hover {
-            background: #1a1a1a;
-            transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        }
-        
-        .btn-secondary {
-            background: transparent;
-            color: #000;
-            padding: 14px 32px;
-            font-weight: 600;
-            border: 2px solid #000;
-            transition: all 0.3s ease;
-        }
-        
-        .btn-secondary:hover {
-            background: #000;
-            color: #fff;
-        }
-        
-        /* Card styles - cleaner, more spacious */
-        .card {
-            background: #fff;
-            border: 1px solid #e5e5e5;
-            transition: all 0.3s ease;
-        }
-        
-        .card:hover {
-            border-color: #000;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
             transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.2), 0 4px 6px -2px rgba(37, 99, 235, 0.1);
+            filter: brightness(110%);
         }
-        
-        /* Fade-in animation */
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.8);
+            color: #0f172a;
+            padding: 12px 32px;
+            font-weight: 500;
+            border: 1px solid #cbd5e1;
+            /* slate-300 */
+            border-radius: 9999px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(4px);
+        }
+
+        .btn-secondary:hover {
+            background: #fff;
+            border-color: #94a3b8;
+            color: #2563eb;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Glass/Clean Cards */
+        .card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            /* slate-200 */
+            height: 100%;
+            min-height: 320px;
+            border-radius: 16px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px 0 rgba(0, 0, 0, 0.02);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        .card:hover {
+            border-color: #bfdbfe;
+            /* brand-200 */
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.01);
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #2563eb, #0ea5e9);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .card:hover::before {
+            opacity: 1;
+        }
+
+        /* Animations */
         .fade-in {
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 0.8s ease, transform 0.8s ease;
         }
-        
+
         .fade-in.visible {
             opacity: 1;
             transform: translateY(0);
         }
-        
-        /* Sticky header */
+
+        /* Sticky header glassmorphism */
         .sticky-header {
-            backdrop-filter: blur(20px);
-            background: rgba(255, 255, 255, 0.98);
-            border-bottom: 1px solid #e5e5e5;
+            backdrop-filter: blur(12px);
+            background: rgba(255, 255, 255, 0.85);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.6);
+            transition: all 0.3s ease;
         }
-        
+
+        .sticky-header.scrolled {
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
         /* Mobile menu */
         .mobile-menu {
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s ease;
+            background: #f8fafc;
         }
-        
+
         .mobile-menu.open {
             max-height: 600px;
+            box-shadow: inset 0 -4px 6px -1px rgba(0, 0, 0, 0.05);
         }
-        
-        /* FAQ accordion */
+
+        /* FAQ Styles */
+        .faq-item {
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            background: #fff;
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        .faq-item:hover {
+            border-color: #cbd5e1;
+        }
+
         .faq-answer {
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.4s ease;
         }
-        
+
+        .faq-item.active {
+            border-color: #2563eb;
+            box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.05);
+        }
+
         .faq-item.active .faq-answer {
             max-height: 500px;
         }
-        
+
         .faq-item.active .faq-icon {
             transform: rotate(180deg);
+            color: #2563eb;
         }
-        
+
         /* Form styling */
         .form-input {
             transition: all 0.3s ease;
-            border: 1px solid #d1d1d1;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            background-color: #f8fafc;
+            padding: 12px 16px;
         }
-        
+
         .form-input:focus {
-            border-color: #000;
+            border-color: #2563eb;
+            background-color: #fff;
             outline: none;
-            box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
         }
-        
-        /* Section spacing - Accenture style */
+
+        /* Spacing */
         .section-spacing {
-            padding: 120px 0;
+            padding: 100px 0;
         }
-        
+
         @media (max-width: 768px) {
             .section-spacing {
-                padding: 80px 0;
+                padding: 60px 0;
             }
         }
-        
-        /* Hero text styling */
+
+        /* Typography Highlights */
         .hero-title {
-            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            font-size: clamp(2.5rem, 5vw, 4rem);
             line-height: 1.1;
             font-weight: 800;
             letter-spacing: -0.03em;
+            background: linear-gradient(to right, #0f172a, #334155);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
-        
+
+        /* Modern Background Pattern */
+        .modern-bg {
+            background-color: #f8fafc;
+            background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+
+        /* Updated Wavy Divider Fill */
+        .fill-slate {
+            fill: #f8fafc;
+            /* match body bg */
+        }
+
+        .fill-white {
+            fill: #ffffff;
+        }
+
         /* Stat numbers */
         .stat-number {
-            font-size: 3.5rem;
+            font-size: 5rem;
             font-weight: 800;
             line-height: 1;
-            letter-spacing: -0.02em;
+            letter-spacing: -0.03em;
+            background: linear-gradient(135deg, #2563eb 0%, #0ea5e9 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
         }
-        
+
         /* Process step numbers */
         .step-number {
             width: 64px;
             height: 64px;
-            background: #000;
+            background: #0f172a;
+            /* slate-900 */
             color: #fff;
             display: flex;
             align-items: center;
@@ -231,7 +384,7 @@
             font-weight: 700;
             flex-shrink: 0;
         }
-        
+
         /* Logo styling */
         .logo-container {
             display: flex;
@@ -239,12 +392,12 @@
             align-items: center;
             gap: 8px;
         }
-        
+
         .logo-svg {
             height: 50px;
             width: auto;
         }
-        
+
         .logo-s {
             font-family: 'Inter', sans-serif;
             font-size: 50px;
@@ -252,34 +405,36 @@
             line-height: 1;
             color: #000;
         }
-        
+
         .logo-text {
             font-family: 'Times New Roman', serif;
-            font-size: 14px;
+            font-size: 40px;
             font-weight: 400;
             letter-spacing: 0.1em;
             color: #000;
+            text-align: left;
         }
-        
+
         @media (max-width: 768px) {
             .logo-svg {
                 height: 32px;
             }
+
             .logo-text {
                 font-size: 12px;
             }
         }
-        
+
         /* Footer logo - white version */
         .logo-footer .logo-svg path,
         .logo-footer .logo-svg rect {
             fill: #fff;
         }
-        
+
         .logo-footer .logo-text {
             color: #fff;
         }
-        
+
         /* Wavy effects */
         .wavy-divider {
             position: relative;
@@ -287,7 +442,7 @@
             height: 60px;
             overflow: hidden;
         }
-        
+
         .wavy-divider svg {
             position: absolute;
             bottom: 0;
@@ -295,286 +450,228 @@
             width: 100%;
             height: 100%;
         }
-        
+
         .wavy-divider-top {
             top: 0;
             bottom: auto;
         }
-        
+
         /* Wavy background pattern */
         .wavy-bg {
             position: relative;
             overflow: hidden;
         }
-        
-        .wavy-bg::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: url("data:image/svg+xml,%3Csvg width='200' height='200' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,100 Q50,80 100,100 T200,100' stroke='%23000' stroke-width='1' fill='none' opacity='0.04'/%3E%3Cpath d='M0,120 Q50,100 100,120 T200,120' stroke='%23000' stroke-width='1' fill='none' opacity='0.03'/%3E%3C/svg%3E");
-            background-size: 300px 300px;
-            background-position: 0 0;
-            pointer-events: none;
-            animation: wave-bg 30s linear infinite;
-        }
-        
-        @keyframes wave-bg {
-            0% {
-                background-position: 0 0;
-            }
-            100% {
-                background-position: 300px 0;
-            }
-        }
-        
-        /* Animated wavy divider */
-        @keyframes wave {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(-100px);
-            }
-        }
-        
-        .wavy-animated path {
-            animation: wave 25s linear infinite;
-        }
-        
-        /* Subtle wave animation on hover */
-        .wavy-divider:hover path {
-            transition: d 0.3s ease;
-        }
-        
+
         /* Dark Mode Overrides */
         .dark body {
-            background-color: #000;
-            color: #e5e5e5;
+            background-color: #020617;
+            /* slate-950 */
+            color: #cbd5e1;
+            /* slate-300 */
+            background-image: radial-gradient(#1e293b 1px, transparent 1px);
         }
-        
+
         .dark .sticky-header {
-            background: rgba(0, 0, 0, 0.9);
-            border-bottom: 1px solid #333;
+            background: rgba(2, 6, 23, 0.85);
+            border-bottom: 1px solid rgba(30, 41, 59, 0.6);
         }
-        
+
         .dark .nav-link {
-            color: #e5e5e5;
+            color: #cbd5e1;
         }
-        
+
         .dark .nav-link:hover {
-            color: #fff;
+            color: #60a5fa;
+            /* brand-400 */
         }
-        
+
         .dark .nav-link:hover::after {
-            background: #fff;
+            background: #60a5fa;
         }
-        
+
         .dark .btn-primary {
-            background: #fff;
-            color: #000;
-            border-color: #fff;
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            color: #fff;
         }
-        
-        .dark .btn-primary:hover {
-            background: #e5e5e5;
-            border-color: #e5e5e5;
-        }
-        
+
         .dark .btn-secondary {
+            background: rgba(30, 41, 59, 0.5);
+            border-color: #334155;
             color: #fff;
-            border-color: #fff;
         }
-        
+
         .dark .btn-secondary:hover {
-            background: #fff;
-            color: #000;
+            background: #1e293b;
+            border-color: #60a5fa;
+            color: #60a5fa;
         }
-        
+
         .dark .card {
-            background: #111;
-            border-color: #333;
+            background: #0f172a;
+            /* slate-900 */
+            border-color: #1e293b;
         }
-        
+
         .dark .card:hover {
-            border-color: #fff;
-            box-shadow: 0 8px 24px rgba(255, 255, 255, 0.05);
+            border-color: #3b82f6;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
         }
-        
-        .dark .hero-title, 
-        .dark h1, 
-        .dark h2, 
-        .dark h3, 
-        .dark h4, 
-        .dark h5, 
-        .dark h6,
-        .dark .logo-s,
-        .dark .logo-text,
-        .dark .stat-number {
-            color: #fff;
+
+        .dark .hero-title {
+            background: linear-gradient(to right, #f8fafc, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
-        
+
+        .dark h1,
+        .dark h2,
+        .dark h3,
+        .dark h4,
+        .dark h5,
+        .dark h6 {
+            color: #f1f5f9;
+        }
+
         .dark .text-gray-600,
         .dark .text-gray-700 {
-            color: #a3a3a3;
+            color: #94a3b8;
         }
-        
+
         .dark .step-number {
-            background: #fff;
-            color: #000;
+            background: #2563eb;
+            color: #fff;
         }
-        
-        .dark .wavy-bg::before {
-            filter: invert(1) opacity(0.2);
-        }
-        
+
         .dark .faq-item {
-            background: #111;
-            border-color: #333;
+            background: #0f172a;
+            border-color: #1e293b;
         }
-        
+
         .dark .faq-question:hover {
-            background: #1a1a1a;
+            background: #1e293b;
         }
-        
-        .dark .faq-answer .text-gray-700 {
-            color: #a3a3a3;
+
+        .dark .faq-answer {
+            color: #94a3b8;
         }
-        
+
         .dark .faq-icon {
-            color: #fff;
+            color: #cbd5e1;
         }
 
-        /* Toggle Button Styles */
-        .theme-toggle {
-            position: relative;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 8px;
-            border-radius: 50%;
-            transition: background-color 0.3s ease;
-            cursor: pointer;
-            color: #1a1a1a;
-        }
-        
-        .dark .theme-toggle {
-            color: #fff;
-        }
-        
-        .theme-toggle:hover {
-            background-color: rgba(0,0,0,0.05);
-        }
-        
-        .dark .theme-toggle:hover {
-            background-color: rgba(255,255,255,0.1);
-        }
-
-        /* Dark mode form fixes */
-        .dark .text-gray-900 {
-            color: #fff;
-        }
-        .dark .form-input {
-            background: #0f0f0f;
-            color: #fff;
-            border-color: #333;
-        }
-        .dark .form-input:focus {
-            border-color: #fff;
-            box-shadow: 0 0 0 3px rgba(255,255,255,0.08);
-        }
-        .dark .form-input::placeholder {
-            color: #9ca3af;
-        }
-        .dark #formSuccess {
-            background: #111;
-            border-color: #333;
-            color: #fff;
-        }
-
-        /* Dark mode text utility overrides */
-        .dark .text-black {
-            color: #fff !important;
-        }
-        .dark .hover\:text-black:hover {
-            color: #fff !important;
-        }
-        .dark .hover\:bg-gray-50:hover {
-            background-color: #1a1a1a !important;
-        }
-
+        /* Toggle/Theme Button */
         .theme-button {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            border: 1px solid #e5e5e5;
+            border: 1px solid #e2e8f0;
             border-radius: 9999px;
             background: #fff;
-            color: #111;
+            color: #0f172a;
             transition: all 0.2s ease;
         }
+
         .theme-button:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+            border-color: #94a3b8;
+            background-color: #f1f5f9;
         }
+
         .dark .theme-button {
-            background: rgba(255,255,255,0.06);
+            background: rgba(30, 41, 59, 0.5);
+            color: #f1f5f9;
+            border-color: #334155;
+        }
+
+        .dark .theme-button:hover {
+            background: #1e293b;
+            border-color: #64748b;
+        }
+
+        /* Form inputs dark */
+        .dark .form-input {
+            background: #0f172a;
             color: #fff;
-            border-color: #333;
+            border-color: #334155;
+        }
+
+        .dark .form-input:focus {
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+        }
+
+        .dark .form-input::placeholder {
+            color: #64748b;
+        }
+
+        /* SVG Fill Utilities for Waves */
+        svg .fill-bg {
+            fill: #f8fafc;
+        }
+
+        .dark svg .fill-bg {
+            fill: #020617;
+        }
+
+        svg .fill-section {
+            fill: #ffffff;
+        }
+
+        .dark svg .fill-section {
+            fill: #0f172a;
         }
     </style>
 </head>
-<body class="bg-white dark:bg-black transition-colors duration-300">
-    
+
+<body class="modern-bg transition-colors duration-300">
+
     <!-- Sticky Header / Navigation -->
     <header class="sticky-header fixed top-0 left-0 right-0 z-50">
         <nav class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
                 <a href="#hero" class="logo-container">
                     <svg class="logo-svg text-black dark:text-white" viewBox="0 0 64 64" aria-hidden="true">
-                        <defs>
-                            <linearGradient id="logoGradient" x1="0" y1="0" x2="1" y2="1">
-                                <stop offset="0" stop-color="currentColor" stop-opacity="0.9"/>
-                                <stop offset="1" stop-color="currentColor" stop-opacity="0.6"/>
-                            </linearGradient>
-                        </defs>
-                        <rect x="6" y="6" width="52" height="52" rx="14" fill="none" stroke="url(#logoGradient)" stroke-width="3"/>
-                        <text x="32" y="40" text-anchor="middle" font-family="Inter, sans-serif" font-weight="900" font-size="34" fill="currentColor">S</text>
+                        <img src="./src/logo.png" alt="" height="40px" width="40px">
+                        <rect x="6" y="6" width="52" height="52" rx="14" fill="none" stroke="url(#logoGradient)"
+                            stroke-width="3" />
                     </svg>
-                    <span class="logo-text">STRAWVIX</span>
                 </a>
-                
+                <span class="logo-text">STRAWVIX
+                </span>
+
                 <!-- Desktop Navigation -->
                 <div class="hidden lg:flex items-center space-x-8">
                     <a href="#services" class="nav-link text-sm font-medium text-gray-700 hover:text-black">Services</a>
-                    <a href="#industries" class="nav-link text-sm font-medium text-gray-700 hover:text-black">Industries</a>
+                    <a href="#industries"
+                        class="nav-link text-sm font-medium text-gray-700 hover:text-black">Industries</a>
                     <a href="#process" class="nav-link text-sm font-medium text-gray-700 hover:text-black">Process</a>
                     <a href="#results" class="nav-link text-sm font-medium text-gray-700 hover:text-black">Results</a>
-                    
-                    <button onclick="toggleTheme()" id="themeToggleDesktop" class="theme-button text-sm px-4 py-2">Dark</button>
-                    
-                    <a href="#contact" class="btn-primary text-sm">Book a Call</a>
+
+                    <button onclick="toggleTheme()" id="themeToggleDesktop"
+                        class="theme-button text-sm px-4 py-2">Dark</button>
+
+                    <a href="https://tally.so/r/3yKvAp" class="btn-primary text-sm">Book a Call</a>
                 </div>
-                
+
                 <!-- Mobile Menu Button -->
                 <button id="mobileMenuBtn" class="lg:hidden text-gray-700 focus:outline-none">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
                 </button>
             </div>
-            
+
             <!-- Mobile Menu -->
             <div id="mobileMenu" class="mobile-menu lg:hidden border-t border-gray-200">
                 <div class="flex flex-col space-y-1 py-4">
                     <div class="px-6 py-3 flex justify-between items-center">
                         <span class="text-gray-700 dark:text-gray-300 font-medium">Theme</span>
-                        <button onclick="toggleTheme()" id="themeToggleMobile" class="theme-button px-4 py-2">Dark</button>
+                        <button onclick="toggleTheme()" id="themeToggleMobile"
+                            class="theme-button px-4 py-2">Dark</button>
                     </div>
                     <a href="#services" class="px-6 py-3 text-gray-700 hover:bg-gray-50 hover:text-black">Services</a>
-                    <a href="#industries" class="px-6 py-3 text-gray-700 hover:bg-gray-50 hover:text-black">Industries</a>
+                    <a href="#industries"
+                        class="px-6 py-3 text-gray-700 hover:bg-gray-50 hover:text-black">Industries</a>
                     <a href="#process" class="px-6 py-3 text-gray-700 hover:bg-gray-50 hover:text-black">Process</a>
                     <a href="#results" class="px-6 py-3 text-gray-700 hover:bg-gray-50 hover:text-black">Results</a>
                     <a href="#contact" class="px-6 py-3 mx-6 mt-4 btn-primary text-center">Book a Call</a>
@@ -582,7 +679,7 @@
             </div>
         </nav>
     </header>
-    
+
     <main>
         <!-- Hero Section - Accenture Style -->
         <section id="hero" class="section-spacing pt-32 wavy-bg">
@@ -593,15 +690,17 @@
                             Done-for-you growth & automation for local service businesses.
                         </h1>
                         <p class="text-xl text-gray-600 mb-12 leading-relaxed max-w-3xl">
-                            Strawvix helps clinics, agencies, and operators turn more clicks into booked customers — without complicating your tech stack.
+                            Strawvix helps clinics, agencies, and operators turn more clicks into booked customers —
+                            without complicating your tech stack.
                         </p>
-                        
+
                         <div class="flex flex-col sm:flex-row gap-4 mb-16">
-                            <a href="#contact" class="btn-primary inline-block text-center">Book a Free Strategy Call</a>
+                            <a href="https://tally.so/r/3yKvAp" class="btn-primary inline-block text-center">Free Strategy
+                                Call</a>
                             <a href="#process" class="btn-secondary inline-block text-center">View How We Work</a>
                         </div>
                     </div>
-                    
+
                     <!-- Key Points -->
                     <div class="grid md:grid-cols-3 gap-8 mt-16 fade-in">
                         <div>
@@ -623,16 +722,17 @@
                 </div>
             </div>
         </section>
-        
+
         <!-- Wavy Divider -->
         <div class="wavy-divider">
-            <svg class="wavy-animated" viewBox="0 0 1200 60" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0,60 C200,40 400,20 600,30 C800,40 1000,20 1200,30 L1200,60 L0,60 Z" class="fill-gray-50 dark:fill-[#111]"/>
+            <svg class="wavy-animated" viewBox="0 0 1200 60" preserveAspectRatio="none" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M0,60 C200,40 400,20 600,30 C800,40 1000,20 1200,30 L1200,60 L0,60 Z" class="fill-bg" />
             </svg>
         </div>
-        
+
         <!-- Who We Help Section -->
-        <section id="industries" class="section-spacing bg-gray-50 dark:bg-[#111]">
+        <section id="industries" class="section-spacing bg-gray-50 dark:bg-transparent">
             <div class="max-w-7xl mx-auto px-6 lg:px-8">
                 <div class="max-w-3xl mb-16 fade-in">
                     <h2 class="text-4xl md:text-5xl font-bold mb-6 text-black">Who we work best with</h2>
@@ -640,131 +740,140 @@
                         If you're in one of these categories, we likely already understand your world.
                     </p>
                 </div>
-                
+
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                     <!-- Industry Cards -->
                     <div class="card p-8 fade-in">
-                        <div class="text-4xl mb-4">🦷</div>
+                        <div class="text-4xl mb-4"><img src="./src/dentist-8576790_1280-removebg-preview.png"
+                                height="100px" width="150px"></div>
                         <h3 class="text-xl font-bold mb-3">Dental & Specialty Clinics</h3>
                         <p class="text-gray-600 text-sm">Fill your chair time with the right kind of patients.</p>
                     </div>
-                    
+
                     <div class="card p-8 fade-in">
-                        <div class="text-4xl mb-4">💉</div>
+                        <div class="text-4xl mb-4"><img src="./src/Medicine-bro.png" height="100px" width="150px"></div>
                         <h3 class="text-xl font-bold mb-3">IV / Cosmetic / Derma Clinics</h3>
                         <p class="text-gray-600 text-sm">Attract quality leads looking for aesthetic treatments.</p>
                     </div>
-                    
+
                     <div class="card p-8 fade-in">
-                        <div class="text-4xl mb-4">🔬</div>
+                        <div class="text-4xl mb-4"><img src="./src/Laboratory-amico.png" alt="laboratory img"
+                                height="100px" width="150px"></div>
                         <h3 class="text-xl font-bold mb-3">Diagnostic Labs</h3>
                         <p class="text-gray-600 text-sm">Drive more test bookings and reduce no-shows.</p>
                     </div>
-                    
+
                     <div class="card p-8 fade-in">
-                        <div class="text-4xl mb-4">🏠</div>
+                        <div class="text-4xl mb-4"><img src="./src/Business deal-pana.png" alt="Bussiness deal"
+                                height="100px" width="150px"></div>
                         <h3 class="text-xl font-bold mb-3">Real Estate Brokerages</h3>
-                        <p class="text-gray-600 text-sm">Generate qualified property inquiries and automate follow-ups.</p>
+                        <p class="text-gray-600 text-sm">Generate qualified property inquiries and automate follow-ups.
+                        </p>
                     </div>
-                    
+
                     <div class="card p-8 fade-in">
-                        <div class="text-4xl mb-4">☀️</div>
-                        <h3 class="text-xl font-bold mb-3">Solar Rooftop Companies</h3>
-                        <p class="text-gray-600 text-sm">Convert homeowners into solar customers with targeted campaigns.</p>
-                    </div>
-                    
-                    <div class="card p-8 fade-in">
-                        <div class="text-4xl mb-4">🏭</div>
+                        <div class="text-4xl mb-4"><img src="./src/Robotics-rafiki.png" alt="Bussiness deal"
+                                height="100px" width="150px"></div>
                         <h3 class="text-xl font-bold mb-3">Manufacturing Units</h3>
                         <p class="text-gray-600 text-sm">Generate B2B leads and streamline enquiry management.</p>
                     </div>
-                    
+
                     <div class="card p-8 fade-in">
-                        <div class="text-4xl mb-4">🚗</div>
+                        <div class="text-4xl mb-4"><img src="./src/Car accesories-pana.png" height="100px"
+                                width="150px"></div>
                         <h3 class="text-xl font-bold mb-3">Car Workshops & Detailing</h3>
                         <p class="text-gray-600 text-sm">Book more service appointments and retain customers.</p>
                     </div>
-                    
+
                     <div class="card p-8 fade-in">
-                        <div class="text-4xl mb-4">🍽️</div>
+                        <div class="text-4xl mb-4"><img src="./src/Coffee shop-rafiki.png" alt="Bussiness deal"
+                                height="100px" width="150px"></div>
                         <h3 class="text-xl font-bold mb-3">Hotels, Restaurants, Cloud Kitchens</h3>
                         <p class="text-gray-600 text-sm">Drive bookings, orders, and repeat visits.</p>
                     </div>
-                    
+
                     <div class="card p-8 fade-in">
-                        <div class="text-4xl mb-4">🚚</div>
+                        <div class="text-4xl mb-4"><img src="./src/Logistics-cuate.png" height="100px" width="150px">
+                        </div>
                         <h3 class="text-xl font-bold mb-3">Logistics & Transport</h3>
                         <p class="text-gray-600 text-sm">Generate freight and transport booking inquiries.</p>
                     </div>
-                    
+
                     <div class="card p-8 fade-in">
-                        <div class="text-4xl mb-4">⚖️</div>
+                        <div class="text-4xl mb-4"><img src="./src/Law firm-cuate.png" alt="Bussiness deal"
+                                height="200px" height="100px" width="150px"></div>
                         <h3 class="text-xl font-bold mb-3">Accounting / Law / Insurance</h3>
                         <p class="text-gray-600 text-sm">Convert consultations into signed clients.</p>
                     </div>
                 </div>
             </div>
         </section>
-        
+
         <!-- Wavy Divider -->
         <div class="wavy-divider">
             <svg viewBox="0 0 1200 60" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0,0 C200,20 400,40 600,30 C800,20 1000,40 1200,30 L1200,0 L0,0 Z" class="fill-white dark:fill-black"/>
+                <path d="M0,0 C200,20 400,40 600,30 C800,20 1000,40 1200,30 L1200,0 L0,0 Z" class="fill-section" />
             </svg>
         </div>
-        
+
         <!-- Problems We Solve Section -->
         <section class="section-spacing bg-white dark:bg-black">
             <div class="max-w-7xl mx-auto px-6 lg:px-8">
                 <div class="max-w-3xl mb-16 fade-in">
                     <h2 class="text-4xl md:text-5xl font-bold mb-6 text-black">The problems we solve</h2>
                 </div>
-                
+
                 <div class="grid md:grid-cols-2 gap-8">
                     <div class="card p-10 fade-in">
                         <div class="text-xs font-semibold text-black uppercase tracking-wider mb-4">Common Issue</div>
                         <h3 class="text-2xl font-bold mb-4 text-black">Inconsistent leads & no pipeline visibility</h3>
                         <p class="text-gray-600 leading-relaxed">
-                            You're spending on ads but can't predict when leads will come in. Some weeks are great, others are dead. You need a steady flow of qualified leads and clear visibility into what's working.
+                            You're spending on ads but can't predict when leads will come in. Some weeks are great,
+                            others are dead. You need a steady flow of qualified leads and clear visibility into what's
+                            working.
                         </p>
                     </div>
-                    
+
                     <div class="card p-10 fade-in">
                         <div class="text-xs font-semibold text-black uppercase tracking-wider mb-4">Common Issue</div>
-                        <h3 class="text-2xl font-bold mb-4 text-black">Enquiry follow-ups falling through the cracks</h3>
+                        <h3 class="text-2xl font-bold mb-4 text-black">Enquiry follow-ups falling through the cracks
+                        </h3>
                         <p class="text-gray-600 leading-relaxed">
-                            Leads call or message, but your team is busy. By the time someone follows up, the lead has moved on. You're losing revenue because enquiries aren't being converted fast enough.
+                            Leads call or message, but your team is busy. By the time someone follows up, the lead has
+                            moved on. You're losing revenue because enquiries aren't being converted fast enough.
                         </p>
                     </div>
-                    
+
                     <div class="card p-10 fade-in">
                         <div class="text-xs font-semibold text-black uppercase tracking-wider mb-4">Common Issue</div>
                         <h3 class="text-2xl font-bold mb-4 text-black">Money spent on ads without clear ROI</h3>
                         <p class="text-gray-600 leading-relaxed">
-                            You're running campaigns but can't connect ad spend to actual revenue. You don't know which campaigns bring in paying customers versus just clicks. Every rupee should be accountable.
+                            You're running campaigns but can't connect ad spend to actual revenue. You don't know which
+                            campaigns bring in paying customers versus just clicks. Every rupee should be accountable.
                         </p>
                     </div>
-                    
+
                     <div class="card p-10 fade-in">
                         <div class="text-xs font-semibold text-black uppercase tracking-wider mb-4">Common Issue</div>
                         <h3 class="text-2xl font-bold mb-4 text-black">No time to set up tech & automation</h3>
                         <p class="text-gray-600 leading-relaxed">
-                            You know automation would help, but you don't have the time or expertise to set up landing pages, tracking, WhatsApp flows, and CRM integrations. You need someone to handle it all.
+                            You know automation would help, but you don't have the time or expertise to set up landing
+                            pages, tracking, WhatsApp flows, and CRM integrations. You need someone to handle it all.
                         </p>
                     </div>
                 </div>
             </div>
         </section>
-        
+
         <!-- Wavy Divider -->
         <div class="wavy-divider">
             <svg viewBox="0 0 1200 60" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0,60 C200,40 400,20 600,30 C800,40 1000,20 1200,30 L1200,60 L0,60 Z" class="fill-gray-50 dark:fill-[#111]"/>
+                <path d="M0,60 C200,40 400,20 600,30 C800,40 1000,20 1200,30 L1200,60 L0,60 Z" class="fill-bg" />
             </svg>
         </div>
-        
+
         <!-- What We Do (Services) Section -->
-        <section id="services" class="section-spacing bg-gray-50 dark:bg-[#111]">
+        <section id="services" class="section-spacing bg-gray-50 dark:bg-transparent">
             <div class="max-w-7xl mx-auto px-6 lg:px-8">
                 <div class="max-w-3xl mb-16 fade-in">
                     <h2 class="text-4xl md:text-5xl font-bold mb-6 text-black">What we do</h2>
@@ -772,147 +881,159 @@
                         We focus on outcomes, not just services. Here's what you get.
                     </p>
                 </div>
-                
+
                 <div class="grid md:grid-cols-2 gap-8">
                     <div class="card p-10 fade-in">
-                        <div class="text-4xl mb-6">🎯</div>
+                        <div class="text-4xl mb-6"></div>
                         <h3 class="text-2xl font-bold mb-4 text-black">Lead Engine Setup</h3>
                         <p class="text-gray-600 leading-relaxed">
-                            Search & social campaigns designed to bring in high-intent leads. We set up Google Ads, Meta campaigns, and optimize targeting so you're reaching people actively looking for your services.
+                            Search & social campaigns designed to bring in high-intent leads. We set up Google Ads, Meta
+                            campaigns, and optimize targeting so you're reaching people actively looking for your
+                            services.
                         </p>
                     </div>
-                    
+
                     <div class="card p-10 fade-in">
-                        <div class="text-4xl mb-6">🔄</div>
+                        <div class="text-4xl mb-6"></div>
                         <h3 class="text-2xl font-bold mb-4 text-black">Conversion & Follow-up Flows</h3>
                         <p class="text-gray-600 leading-relaxed">
-                            Landing pages, forms, WhatsApp & email follow-ups that convert clicks into booked calls. We automate the journey from first click to confirmed appointment.
+                            Landing pages, forms, WhatsApp & email follow-ups that convert clicks into booked calls. We
+                            automate the journey from first click to confirmed appointment.
                         </p>
                     </div>
-                    
+
                     <div class="card p-10 fade-in">
-                        <div class="text-4xl mb-6">📊</div>
+                        <div class="text-4xl mb-6"></div>
                         <h3 class="text-2xl font-bold mb-4 text-black">Tracking & Reporting</h3>
                         <p class="text-gray-600 leading-relaxed">
-                            Clear dashboards so you know what's working — and what's not. No fluff, just honest numbers: leads, conversions, revenue, and ROI. Updated in real-time.
+                            Clear dashboards so you know what's working — and what's not. No fluff, just honest numbers:
+                            leads, conversions, revenue, and ROI. Updated in real-time.
                         </p>
                     </div>
-                    
+
                     <div class="card p-10 fade-in">
-                        <div class="text-4xl mb-6">⚙️</div>
+                        <div class="text-4xl mb-6"></div>
                         <h3 class="text-2xl font-bold mb-4 text-black">Systems & Automation</h3>
                         <p class="text-gray-600 leading-relaxed">
-                            Simple automations to close the gap between enquiry, follow-up, and revenue. WhatsApp bots, email sequences, CRM integrations — all set up and running.
+                            Simple automations to close the gap between enquiry, follow-up, and revenue. WhatsApp bots,
+                            email sequences, CRM integrations — all set up and running.
                         </p>
                     </div>
                 </div>
             </div>
         </section>
-        
+
         <!-- Wavy Divider -->
         <div class="wavy-divider">
             <svg viewBox="0 0 1200 60" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0,0 C200,20 400,40 600,30 C800,20 1000,40 1200,30 L1200,0 L0,0 Z" class="fill-white dark:fill-black"/>
+                <path d="M0,0 C200,20 400,40 600,30 C800,20 1000,40 1200,30 L1200,0 L0,0 Z" class="fill-section" />
             </svg>
         </div>
-        
+
         <!-- How It Works (Process) Section -->
         <section id="process" class="section-spacing bg-white dark:bg-black">
             <div class="max-w-7xl mx-auto px-6 lg:px-8">
                 <div class="max-w-3xl mb-16 fade-in">
                     <h2 class="text-4xl md:text-5xl font-bold mb-6 text-black">How working with Strawvix works</h2>
                 </div>
-                
+
                 <div class="space-y-12 max-w-4xl">
                     <div class="flex gap-8 items-start fade-in">
                         <div class="step-number">1</div>
                         <div class="flex-1">
                             <h3 class="text-2xl font-bold mb-4 text-black">Audit & strategy call</h3>
                             <p class="text-gray-600 leading-relaxed text-lg">
-                                We jump on a quick call to understand your business, targets, and current funnel. We'll identify gaps and outline a clear plan to get you more leads and better conversions.
+                                We jump on a quick call to understand your business, targets, and current funnel. We'll
+                                identify gaps and outline a clear plan to get you more leads and better conversions.
                             </p>
                         </div>
                     </div>
-                    
+
                     <div class="flex gap-8 items-start fade-in">
                         <div class="step-number">2</div>
                         <div class="flex-1">
                             <h3 class="text-2xl font-bold mb-4 text-black">Funnel & campaigns setup</h3>
                             <p class="text-gray-600 leading-relaxed text-lg">
-                                We set up landing pages, tracking, campaigns, and automations. You don't need to lift a finger. We handle the technical setup so you can focus on your business.
+                                We set up landing pages, tracking, campaigns, and automations. You don't need to lift a
+                                finger. We handle the technical setup so you can focus on your business.
                             </p>
                         </div>
                     </div>
-                    
+
                     <div class="flex gap-8 items-start fade-in">
                         <div class="step-number">3</div>
                         <div class="flex-1">
                             <h3 class="text-2xl font-bold mb-4 text-black">Launch, test, and optimize</h3>
                             <p class="text-gray-600 leading-relaxed text-lg">
-                                We launch quickly, then tighten targeting, creatives, and follow-ups based on data. Every week, we refine what's working and cut what's not.
+                                We launch quickly, then tighten targeting, creatives, and follow-ups based on data.
+                                Every week, we refine what's working and cut what's not.
                             </p>
                         </div>
                     </div>
-                    
+
                     <div class="flex gap-8 items-start fade-in">
                         <div class="step-number">4</div>
                         <div class="flex-1">
                             <h3 class="text-2xl font-bold mb-4 text-black">Scale what's working</h3>
                             <p class="text-gray-600 leading-relaxed text-lg">
-                                Once we confirm ROI, we help you safely scale spend and volume. We increase budgets on winning campaigns and expand to new channels when ready.
+                                Once we confirm ROI, we help you safely scale spend and volume. We increase budgets on
+                                winning campaigns and expand to new channels when ready.
                             </p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        
+
         <!-- Wavy Divider -->
         <div class="wavy-divider">
             <svg viewBox="0 0 1200 60" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0,60 C200,40 400,20 600,30 C800,40 1000,20 1200,30 L1200,60 L0,60 Z" class="fill-gray-50 dark:fill-[#111]"/>
+                <path d="M0,60 C200,40 400,20 600,30 C800,40 1000,20 1200,30 L1200,60 L0,60 Z" class="fill-bg" />
             </svg>
         </div>
-        
+
         <!-- Results & Social Proof Section -->
-        <section id="results" class="section-spacing bg-gray-50 dark:bg-[#111]">
+        <section id="results" class="section-spacing bg-gray-50 dark:bg-transparent">
             <div class="max-w-7xl mx-auto px-6 lg:px-8">
                 <div class="grid lg:grid-cols-2 gap-16 items-center mb-20">
                     <div class="fade-in">
-                        <h2 class="text-4xl md:text-5xl font-bold mb-6 text-black">Built to get you measurable results</h2>
+                        <h2 class="text-4xl md:text-5xl font-bold mb-6 text-black">Built to get you measurable results
+                        </h2>
                         <p class="text-xl text-gray-600 leading-relaxed">
-                            We don't just run campaigns — we obsess over metrics that matter: booked appointments, revenue, and ROI. Here's what our clients are seeing.
+                            We don't just run campaigns — we obsess over metrics that matter: booked appointments,
+                            revenue, and ROI. Here's what our clients are seeing.
                         </p>
                     </div>
-                    
+
                     <div class="grid grid-cols-2 gap-6 fade-in">
                         <div class="card p-8">
-                            <div class="stat-number text-black mb-2">+143</div>
+                            <div class="stat-number mb-2">+143</div>
                             <div class="text-sm text-gray-600">Booked appointments in 60 days</div>
                         </div>
-                        
+
                         <div class="card p-8">
-                            <div class="stat-number text-black mb-2">4.8x</div>
+                            <div class="stat-number mb-2">4.8x</div>
                             <div class="text-sm text-gray-600">Average ad spend return</div>
                         </div>
-                        
+
                         <div class="card p-8">
-                            <div class="stat-number text-black mb-2">38%</div>
+                            <div class="stat-number mb-2">38%</div>
                             <div class="text-sm text-gray-600">More repeat customers from automation</div>
                         </div>
-                        
+
                         <div class="card p-8">
-                            <div class="stat-number text-black mb-2">&lt;2</div>
+                            <div class="stat-number mb-2">&lt;2</div>
                             <div class="text-sm text-gray-600">Week average time to go live</div>
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Testimonials -->
                 <div class="grid md:grid-cols-2 gap-8">
                     <div class="card p-10 fade-in">
                         <div class="flex items-center mb-6">
-                            <div class="w-16 h-16 bg-black text-white rounded-full flex items-center justify-center font-bold text-xl mr-4">
+                            <div
+                                class="w-16 h-16 bg-black text-white rounded-full flex items-center justify-center font-bold text-xl mr-4">
                                 R
                             </div>
                             <div>
@@ -921,13 +1042,15 @@
                             </div>
                         </div>
                         <p class="text-gray-700 leading-relaxed text-lg">
-                            "With Strawvix we finally know what's working and what's not. The dashboard is clear, and we're getting quality leads that actually book appointments. ROI is transparent."
+                            "With Strawvix we finally know what's working and what's not. The dashboard is clear, and
+                            we're getting quality leads that actually book appointments. ROI is transparent."
                         </p>
                     </div>
-                    
+
                     <div class="card p-10 fade-in">
                         <div class="flex items-center mb-6">
-                            <div class="w-16 h-16 bg-black text-white rounded-full flex items-center justify-center font-bold text-xl mr-4">
+                            <div
+                                class="w-16 h-16 bg-black text-white rounded-full flex items-center justify-center font-bold text-xl mr-4">
                                 P
                             </div>
                             <div>
@@ -936,13 +1059,15 @@
                             </div>
                         </div>
                         <p class="text-gray-700 leading-relaxed text-lg">
-                            "The WhatsApp automation alone has been a game-changer. Leads get instant responses, and we're not losing enquiries anymore. Setup was quick and painless."
+                            "The WhatsApp automation alone has been a game-changer. Leads get instant responses, and
+                            we're not losing enquiries anymore. Setup was quick and painless."
                         </p>
                     </div>
 
                     <div class="card p-10 fade-in">
                         <div class="flex items-center mb-6">
-                            <div class="w-16 h-16 bg-black text-white rounded-full flex items-center justify-center font-bold text-xl mr-4">
+                            <div
+                                class="w-16 h-16 bg-black text-white rounded-full flex items-center justify-center font-bold text-xl mr-4">
                                 M
                             </div>
                             <div>
@@ -951,13 +1076,15 @@
                             </div>
                         </div>
                         <p class="text-gray-700 leading-relaxed text-lg">
-                            "Smart targeting and simple follow-ups turned website clicks into booked consultations. The setup was fast and the reporting is crystal clear."
+                            "Smart targeting and simple follow-ups turned website clicks into booked consultations. The
+                            setup was fast and the reporting is crystal clear."
                         </p>
                     </div>
 
                     <div class="card p-10 fade-in">
                         <div class="flex items-center mb-6">
-                            <div class="w-16 h-16 bg-black text-white rounded-full flex items-center justify-center font-bold text-xl mr-4">
+                            <div
+                                class="w-16 h-16 bg-black text-white rounded-full flex items-center justify-center font-bold text-xl mr-4">
                                 S
                             </div>
                             <div>
@@ -966,13 +1093,15 @@
                             </div>
                         </div>
                         <p class="text-gray-700 leading-relaxed text-lg">
-                            "Clear funnel, fast follow-ups, and honest numbers. We scaled ad spend confidently after seeing consistent ROI."
+                            "Clear funnel, fast follow-ups, and honest numbers. We scaled ad spend confidently after
+                            seeing consistent ROI."
                         </p>
                     </div>
 
                     <div class="card p-10 fade-in">
                         <div class="flex items-center mb-6">
-                            <div class="w-16 h-16 bg-black text-white rounded-full flex items-center justify-center font-bold text-xl mr-4">
+                            <div
+                                class="w-16 h-16 bg-black text-white rounded-full flex items-center justify-center font-bold text-xl mr-4">
                                 A
                             </div>
                             <div>
@@ -981,13 +1110,15 @@
                             </div>
                         </div>
                         <p class="text-gray-700 leading-relaxed text-lg">
-                            "Automation ensured every enquiry received a prompt response. Bookings increased without adding complexity to our tools."
+                            "Automation ensured every enquiry received a prompt response. Bookings increased without
+                            adding complexity to our tools."
                         </p>
                     </div>
 
                     <div class="card p-10 fade-in">
                         <div class="flex items-center mb-6">
-                            <div class="w-16 h-16 bg-black text-white rounded-full flex items-center justify-center font-bold text-xl mr-4">
+                            <div
+                                class="w-16 h-16 bg-black text-white rounded-full flex items-center justify-center font-bold text-xl mr-4">
                                 E
                             </div>
                             <div>
@@ -996,266 +1127,209 @@
                             </div>
                         </div>
                         <p class="text-gray-700 leading-relaxed text-lg">
-                            "Appointments became predictable. The reporting dashboard made it easy to see what's working and why."
+                            "Appointments became predictable. The reporting dashboard made it easy to see what's working
+                            and why."
                         </p>
                     </div>
                 </div>
             </div>
         </section>
-        
+
         <!-- Wavy Divider -->
         <div class="wavy-divider">
             <svg viewBox="0 0 1200 60" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0,0 C200,20 400,40 600,30 C800,20 1000,40 1200,30 L1200,0 L0,0 Z" class="fill-white dark:fill-black"/>
+                <path d="M0,0 C200,20 400,40 600,30 C800,20 1000,40 1200,30 L1200,0 L0,0 Z" class="fill-section" />
             </svg>
         </div>
-        
+
         <!-- Why Strawvix Section -->
         <section class="section-spacing bg-white dark:bg-black">
             <div class="max-w-7xl mx-auto px-6 lg:px-8">
                 <div class="max-w-3xl mb-16 fade-in">
                     <h2 class="text-4xl md:text-5xl font-bold mb-6 text-black">Why clients pick Strawvix</h2>
                 </div>
-                
+
                 <div class="grid lg:grid-cols-2 gap-16 items-center">
                     <div class="space-y-8 fade-in">
                         <div class="flex items-start gap-6">
                             <div class="text-2xl font-bold">✓</div>
                             <div>
-                                <h3 class="text-xl font-bold mb-2 text-black">Built specifically for service businesses</h3>
-                                <p class="text-gray-600">We don't treat you like an e-commerce store. Our systems are designed for clinics, agencies, and operators who need leads, not just traffic.</p>
+                                <h3 class="text-xl font-bold mb-2 text-black">Built specifically for service businesses
+                                </h3>
+                                <p class="text-gray-600">We don't treat you like an e-commerce store. Our systems are
+                                    designed for clinics, agencies, and operators who need leads, not just traffic.</p>
                             </div>
                         </div>
-                        
+
                         <div class="flex items-start gap-6">
                             <div class="text-2xl font-bold">✓</div>
                             <div>
-                                <h3 class="text-xl font-bold mb-2 text-black">We prioritize simplicity over fancy tools</h3>
-                                <p class="text-gray-600">No complex dashboards you'll never use. We give you clear numbers and action steps, not overwhelming data.</p>
+                                <h3 class="text-xl font-bold mb-2 text-black">We prioritize simplicity over fancy tools
+                                </h3>
+                                <p class="text-gray-600">No complex dashboards you'll never use. We give you clear
+                                    numbers and action steps, not overwhelming data.</p>
                             </div>
                         </div>
-                        
+
                         <div class="flex items-start gap-6">
                             <div class="text-2xl font-bold">✓</div>
                             <div>
-                                <h3 class="text-xl font-bold mb-2 text-black">We obsess over lead quality, not just volume</h3>
-                                <p class="text-gray-600">Anyone can get you clicks. We focus on leads that actually convert into booked appointments and paying customers.</p>
+                                <h3 class="text-xl font-bold mb-2 text-black">We obsess over lead quality, not just
+                                    volume</h3>
+                                <p class="text-gray-600">Anyone can get you clicks. We focus on leads that actually
+                                    convert into booked appointments and paying customers.</p>
                             </div>
                         </div>
-                        
+
                         <div class="flex items-start gap-6">
                             <div class="text-2xl font-bold">✓</div>
                             <div>
-                                <h3 class="text-xl font-bold mb-2 text-black">You get direct access, not a faceless team</h3>
-                                <p class="text-gray-600">You'll work directly with the team running your campaigns. No account managers or long email chains — just clear communication.</p>
+                                <h3 class="text-xl font-bold mb-2 text-black">You get direct access, not a faceless team
+                                </h3>
+                                <p class="text-gray-600">You'll work directly with the team running your campaigns. No
+                                    account managers or long email chains — just clear communication.</p>
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="fade-in">
                         <div class="bg-black text-white p-12">
                             <h3 class="text-3xl font-bold mb-6">Our Promise</h3>
                             <p class="text-lg leading-relaxed mb-6 text-gray-200">
-                                No fluff reports, just honest numbers and action steps. We'll tell you what's working, what's not, and exactly what we're doing to fix it.
+                                No fluff reports, just honest numbers and action steps. We'll tell you what's working,
+                                what's not, and exactly what we're doing to fix it.
                             </p>
                             <p class="text-lg leading-relaxed text-gray-200">
-                                If we can't show you clear ROI within 90 days, we'll adjust the strategy — no questions asked.
+                                If we can't show you clear ROI within 90 days, we'll adjust the strategy — no questions
+                                asked.
                             </p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        
+
         <!-- Wavy Divider -->
         <div class="wavy-divider">
             <svg viewBox="0 0 1200 60" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0,60 C200,40 400,20 600,30 C800,40 1000,20 1200,30 L1200,60 L0,60 Z" class="fill-gray-50 dark:fill-[#111]"/>
+                <path d="M0,60 C200,40 400,20 600,30 C800,40 1000,20 1200,30 L1200,60 L0,60 Z" class="fill-bg" />
             </svg>
         </div>
-        
+
         <!-- FAQ Section -->
-        <section id="faq" class="section-spacing bg-gray-50 dark:bg-[#111]">
+        <section id="faq" class="section-spacing bg-gray-50 dark:bg-transparent">
             <div class="max-w-4xl mx-auto px-6 lg:px-8">
                 <div class="max-w-3xl mb-16 fade-in">
                     <h2 class="text-4xl md:text-5xl font-bold mb-6 text-black">Questions you might be asking</h2>
                 </div>
-                
+
                 <div class="space-y-4">
                     <div class="faq-item card overflow-hidden fade-in">
-                        <button class="faq-question w-full text-left p-8 flex items-center justify-between hover:bg-gray-50 transition">
-                            <span class="font-semibold text-lg text-black">What type of businesses do you work with?</span>
+                        <button
+                            class="faq-question w-full text-left p-8 flex items-center justify-between hover:bg-gray-50 transition">
+                            <span class="font-semibold text-lg text-black">What type of businesses do you work
+                                with?</span>
                             <span class="faq-icon text-black text-2xl transition">▼</span>
                         </button>
                         <div class="faq-answer">
                             <div class="px-8 pb-8 text-gray-700">
-                                We specialize in local service businesses and SMEs in India: dental & medical clinics, real estate, logistics, manufacturing, hospitality, and professional services. If you're selling services (not products) and need more leads, we can likely help.
+                                We specialize in local service businesses and SMEs in India: dental & medical clinics,
+                                real estate, logistics, manufacturing, hospitality, and professional services. If you're
+                                selling services (not products) and need more leads, we can likely help.
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="faq-item card overflow-hidden fade-in">
-                        <button class="faq-question w-full text-left p-8 flex items-center justify-between hover:bg-gray-50 transition">
-                            <span class="font-semibold text-lg text-black">Do you also handle content and creatives?</span>
+                        <button
+                            class="faq-question w-full text-left p-8 flex items-center justify-between hover:bg-gray-50 transition">
+                            <span class="font-semibold text-lg text-black">Do you also handle content and
+                                creatives?</span>
                             <span class="faq-icon text-black text-2xl transition">▼</span>
                         </button>
                         <div class="faq-answer">
                             <div class="px-8 pb-8 text-gray-700">
-                                Yes. We create ad copy, landing page content, and basic creatives. For complex video or design work, we work with trusted partners or you can provide your own assets. We focus on what converts, not just what looks pretty.
+                                Yes. We create ad copy, landing page content, and basic creatives. For complex video or
+                                design work, we work with trusted partners or you can provide your own assets. We focus
+                                on what converts, not just what looks pretty.
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="faq-item card overflow-hidden fade-in">
-                        <button class="faq-question w-full text-left p-8 flex items-center justify-between hover:bg-gray-50 transition">
-                            <span class="font-semibold text-lg text-black">Is there a minimum retainer or contract length?</span>
+                        <button
+                            class="faq-question w-full text-left p-8 flex items-center justify-between hover:bg-gray-50 transition">
+                            <span class="font-semibold text-lg text-black">Is there a minimum retainer or contract
+                                length?</span>
                             <span class="faq-icon text-black text-2xl transition">▼</span>
                         </button>
                         <div class="faq-answer">
                             <div class="px-8 pb-8 text-gray-700">
-                                We typically work on monthly retainers starting from ₹50,000/month (excluding ad spend). We prefer 3-month minimum commitments to ensure we can optimize and show real results. After that, it's month-to-month.
+                                We typically work on monthly retainers starting from ₹50,000/month (excluding ad spend).
+                                We prefer 3-month minimum commitments to ensure we can optimize and show real results.
+                                After that, it's month-to-month.
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="faq-item card overflow-hidden fade-in">
-                        <button class="faq-question w-full text-left p-8 flex items-center justify-between hover:bg-gray-50 transition">
+                        <button
+                            class="faq-question w-full text-left p-8 flex items-center justify-between hover:bg-gray-50 transition">
                             <span class="font-semibold text-lg text-black">How soon can we see results?</span>
                             <span class="faq-icon text-black text-2xl transition">▼</span>
                         </button>
                         <div class="faq-answer">
                             <div class="px-8 pb-8 text-gray-700">
-                                Setup takes 1-2 weeks. After launch, you'll start seeing leads within days. We typically see meaningful ROI within 60-90 days as we optimize targeting and conversion flows. We'll share weekly reports so you can track progress.
+                                Setup takes 1-2 weeks. After launch, you'll start seeing leads within days. We typically
+                                see meaningful ROI within 60-90 days as we optimize targeting and conversion flows.
+                                We'll share weekly reports so you can track progress.
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="faq-item card overflow-hidden fade-in">
-                        <button class="faq-question w-full text-left p-8 flex items-center justify-between hover:bg-gray-50 transition">
-                            <span class="font-semibold text-lg text-black">Do you set up CRM / WhatsApp flows too?</span>
+                        <button
+                            class="faq-question w-full text-left p-8 flex items-center justify-between hover:bg-gray-50 transition">
+                            <span class="font-semibold text-lg text-black">Do you set up CRM / WhatsApp flows
+                                too?</span>
                             <span class="faq-icon text-black text-2xl transition">▼</span>
                         </button>
                         <div class="faq-answer">
                             <div class="px-8 pb-8 text-gray-700">
-                                Yes. We set up WhatsApp Business API flows, email automation, and integrate with popular CRMs (HubSpot, Zoho, etc.). We'll configure everything so leads flow automatically from ads → landing page → WhatsApp/email → your CRM.
+                                Yes. We set up WhatsApp Business API flows, email automation, and integrate with popular
+                                CRMs (HubSpot, Zoho, etc.). We'll configure everything so leads flow automatically from
+                                ads → landing page → WhatsApp/email → your CRM.
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="faq-item card overflow-hidden fade-in">
-                        <button class="faq-question w-full text-left p-8 flex items-center justify-between hover:bg-gray-50 transition">
+                        <button
+                            class="faq-question w-full text-left p-8 flex items-center justify-between hover:bg-gray-50 transition">
                             <span class="font-semibold text-lg text-black">What if I'm already running ads?</span>
                             <span class="faq-icon text-black text-2xl transition">▼</span>
                         </button>
                         <div class="faq-answer">
                             <div class="px-8 pb-8 text-gray-700">
-                                We'll audit your current setup first. If your campaigns are working, we'll optimize them. If not, we'll rebuild with better targeting, creatives, and conversion flows. Either way, we'll show you clear improvements in ROI.
+                                We'll audit your current setup first. If your campaigns are working, we'll optimize
+                                them. If not, we'll rebuild with better targeting, creatives, and conversion flows.
+                                Either way, we'll show you clear improvements in ROI.
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        
+
         <!-- Wavy Divider -->
         <div class="wavy-divider">
             <svg viewBox="0 0 1200 60" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0,0 C200,20 400,40 600,30 C800,20 1000,40 1200,30 L1200,0 L0,0 Z" class="fill-white dark:fill-black"/>
+                <path d="M0,0 C200,20 400,40 600,30 C800,20 1000,40 1200,30 L1200,0 L0,0 Z" class="fill-section" />
             </svg>
         </div>
         
-        <!-- Contact / Lead Capture Section -->
-        <section id="contact" class="section-spacing bg-white dark:bg-black">
-            <div class="max-w-4xl mx-auto px-6 lg:px-8">
-                <div class="max-w-2xl mb-12 fade-in">
-                    <h2 class="text-4xl md:text-5xl font-bold mb-6 text-black">Tell us about your business</h2>
-                    <p class="text-xl text-gray-600">
-                        Share a few details and we'll get back within 24 hours with next steps.
-                    </p>
-                </div>
-                
-                <form id="contactForm" class="card p-10 md:p-12 fade-in">
-                    <div class="grid md:grid-cols-2 gap-6 mb-6">
-                        <div>
-                            <label for="name" class="block text-sm font-semibold text-gray-900 mb-2">Name *</label>
-                            <input type="text" id="name" name="name" required class="form-input w-full px-4 py-3">
-                        </div>
-                        <div>
-                            <label for="business" class="block text-sm font-semibold text-gray-900 mb-2">Business Name *</label>
-                            <input type="text" id="business" name="business" required class="form-input w-full px-4 py-3">
-                        </div>
-                    </div>
-                    
-                    <div class="grid md:grid-cols-2 gap-6 mb-6">
-                        <div>
-                            <label for="industry" class="block text-sm font-semibold text-gray-900 mb-2">Industry *</label>
-                            <select id="industry" name="industry" required class="form-input w-full px-4 py-3">
-                                <option value="">Select industry</option>
-                                <option value="dental">Dental & Specialty Clinics</option>
-                                <option value="cosmetic">IV / Cosmetic / Derma Clinics</option>
-                                <option value="diagnostic">Diagnostic Labs</option>
-                                <option value="real-estate">Real Estate Brokerages & Developers</option>
-                                <option value="solar">Solar Rooftop Companies</option>
-                                <option value="manufacturing">Manufacturing Units</option>
-                                <option value="automotive">Car Workshops & Detailing Studios</option>
-                                <option value="hospitality">Hotels, Restaurants, Cloud Kitchens</option>
-                                <option value="logistics">Logistics & Transport Operators</option>
-                                <option value="professional">Accounting / Law / Insurance Firms</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label for="city" class="block text-sm font-semibold text-gray-900 mb-2">City *</label>
-                            <input type="text" id="city" name="city" required class="form-input w-full px-4 py-3">
-                        </div>
-                    </div>
-                    
-                    <div class="grid md:grid-cols-2 gap-6 mb-6">
-                        <div>
-                            <label for="email" class="block text-sm font-semibold text-gray-900 mb-2">Email *</label>
-                            <input type="email" id="email" name="email" required class="form-input w-full px-4 py-3">
-                        </div>
-                        <div>
-                            <label for="phone" class="block text-sm font-semibold text-gray-900 mb-2">Phone / WhatsApp *</label>
-                            <input type="tel" id="phone" name="phone" required class="form-input w-full px-4 py-3">
-                        </div>
-                    </div>
-                    
-                    <div class="mb-6">
-                        <label for="budget" class="block text-sm font-semibold text-gray-900 mb-2">Monthly Marketing Budget *</label>
-                        <select id="budget" name="budget" required class="form-input w-full px-4 py-3">
-                            <option value="">Select budget range</option>
-                            <option value="under-50k">Under ₹50,000</option>
-                            <option value="50k-1lakh">₹50,000 - ₹1,00,000</option>
-                            <option value="1lakh-2lakh">₹1,00,000 - ₹2,00,000</option>
-                            <option value="2lakh-5lakh">₹2,00,000 - ₹5,00,000</option>
-                            <option value="over-5lakh">Over ₹5,00,000</option>
-                        </select>
-                    </div>
-                    
-                    <div class="mb-8">
-                        <label for="message" class="block text-sm font-semibold text-gray-900 mb-2">What you're struggling with / Message</label>
-                        <textarea id="message" name="message" rows="4" class="form-input w-full px-4 py-3"></textarea>
-                    </div>
-                    
-                    <button type="submit" class="btn-primary w-full md:w-auto">
-                        Submit & Request Strategy Call
-                    </button>
-                    
-                    <div id="formSuccess" class="hidden mt-6 p-4 bg-gray-50 border border-gray-200 text-gray-900">
-                        <strong>Thank you!</strong> We've received your details and will get back to you within 24 hours.
-                    </div>
-                </form>
-                
-                <div class="text-center mt-12 fade-in">
-                    <p class="text-gray-600">
-                        Prefer WhatsApp? Message us at <a href="https://wa.me/919876543210" class="text-black font-semibold hover:underline">+91 98765 43210</a>
-                    </p>
-                </div>
-            </div>
-        </section>
     </main>
-    
+
     <!-- Footer -->
     <footer class="bg-black text-gray-300 py-16 px-6 lg:px-8">
         <div class="max-w-7xl mx-auto">
@@ -1265,12 +1339,14 @@
                         <svg class="logo-svg text-white" viewBox="0 0 64 64" aria-hidden="true">
                             <defs>
                                 <linearGradient id="logoGradientFooter" x1="0" y1="0" x2="1" y2="1">
-                                    <stop offset="0" stop-color="currentColor" stop-opacity="0.9"/>
-                                    <stop offset="1" stop-color="currentColor" stop-opacity="0.6"/>
+                                    <stop offset="0" stop-color="currentColor" stop-opacity="0.9" />
+                                    <stop offset="1" stop-color="currentColor" stop-opacity="0.6" />
                                 </linearGradient>
                             </defs>
-                            <rect x="6" y="6" width="52" height="52" rx="14" fill="none" stroke="url(#logoGradientFooter)" stroke-width="3"/>
-                            <text x="32" y="40" text-anchor="middle" font-family="Inter, sans-serif" font-weight="900" font-size="34" fill="currentColor">S</text>
+                            <rect x="6" y="6" width="52" height="52" rx="14" fill="none"
+                                stroke="url(#logoGradientFooter)" stroke-width="3" />
+                            <text x="32" y="40" text-anchor="middle" font-family="Inter, sans-serif" font-weight="900"
+                                font-size="34" fill="currentColor">S</text>
                         </svg>
                         <span class="logo-text text-white">STRAWVIX</span>
                     </a>
@@ -1305,20 +1381,20 @@
             </div>
         </div>
     </footer>
-    
+
     <!-- JavaScript -->
     <script>
         // Set current year
         document.getElementById('currentYear').textContent = new Date().getFullYear();
-        
+
         // Mobile menu toggle
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const mobileMenu = document.getElementById('mobileMenu');
-        
+
         mobileMenuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('open');
         });
-        
+
         // Close mobile menu when clicking a link
         const mobileLinks = mobileMenu.querySelectorAll('a');
         mobileLinks.forEach(link => {
@@ -1326,7 +1402,7 @@
                 mobileMenu.classList.remove('open');
             });
         });
-        
+
         // FAQ Accordion
         const faqItems = document.querySelectorAll('.faq-item');
         faqItems.forEach(item => {
@@ -1342,13 +1418,13 @@
                 item.classList.toggle('active');
             });
         });
-        
+
         // Scroll animations
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -100px 0px'
         };
-        
+
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -1356,30 +1432,30 @@
                 }
             });
         }, observerOptions);
-        
+
         document.querySelectorAll('.fade-in').forEach(el => {
             observer.observe(el);
         });
-        
+
         // Form submission
         const contactForm = document.getElementById('contactForm');
         const formSuccess = document.getElementById('formSuccess');
-        
+
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            
+
             // Get form data
             const formData = new FormData(contactForm);
             const data = Object.fromEntries(formData);
-            
+
             // For now, just show success message
             formSuccess.classList.remove('hidden');
             contactForm.reset();
-            
+
             // Scroll to success message
             formSuccess.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         });
-        
+
         // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -1391,7 +1467,7 @@
                         const headerOffset = 100;
                         const elementPosition = target.getBoundingClientRect().top;
                         const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-                        
+
                         window.scrollTo({
                             top: offsetPosition,
                             behavior: 'smooth'
@@ -1402,4 +1478,5 @@
         });
     </script>
 </body>
+
 </html>
